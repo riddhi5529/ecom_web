@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jewelry Collection - GlamRent</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #fdf6ec;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff8a65, #f06292);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-info button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product-info p {
+      margin: 5px 0;
+    }
+
+    .cart-billing {
+      padding: 40px;
+      background-color: #fff9f0;
+    }
+    .cart-billing h2 {
+      text-align: center;
+    }
+    .cart-billing input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .cart-items {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 0;
+      list-style: none;
+    }
+    .cart-items li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .billing-summary {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff3e0;
+      border-radius: 10px;
+    }
+    .billing-summary p {
+      margin: 8px 0;
+    }
+    .checkout-btn {
+      background-color: #f06292;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Jewelry Collection</h1>
+  </header>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="kundan_necklace.jpg" alt="Kundan Necklace">
+      <div class="product-info">
+        <h3>Kundan Necklace</h3>
+        <p>Retail Price: ₹13,000</p>
+        <p>Rental Price: ₹3,500</p>
+        <button onclick="addToCart('Kundan Necklace', 3500)">Add to Cart</button>
+        
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="polki_set.jpg" alt="Polki Set">
+      <div class="product-info">
+        <h3>Polki Set </h3>
+        <p>Retail Price: ₹8,000</p>
+        <p>Rental Price: ₹2,500</p>
+        <button onclick="addToCart('Polki Set', 2500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="gold_platted.jpg" alt="Gold Plated Set">
+      <div class="product-info">
+        <h3>Gold Platted Set </h3>
+        <p>Retail Price: ₹35,000</p>
+        <p>Rental Price: ₹4,000</p>
+        <button onclick="addToCart('Gold Platted Set', 4000)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="peral_choker.jpg" alt="Pearl Choker">
+      <div class="product-info">
+        <h3>Pearl Choker </h3>
+        <p>Retail Price: ₹3,000</p>
+        <p>Rental Price: ₹8,00</p>
+        <button onclick="addToCart('Pearl Choker', 800)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="meenkari_bangles.jpg" alt="Meenakari Bangles">
+      <div class="product-info">
+        <h3>Meenkari Bangles </h3>
+        <p>Retail Price: ₹1,300</p>
+        <p>Rental Price: ₹350</p>
+        <button onclick="addToCart('Meenkari Bangles', 350)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="dimaond_necklace.jpg" alt="Diamond Necklace">
+      <div class="product-info">
+        <h3>Diamond Necklace </h3>
+        <p>Retail Price: ₹30,000</p>
+        <p>Rental Price: ₹3,500</p>
+        <button onclick="addToCart('Daimond Necklace', 3500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="maangtikka.jpg" alt="Traditional Maang Tikka">
+      <div class="product-info">
+        <h3>Traditional MaangTikka </h3>
+        <p>Retail Price: ₹7,00</p>
+        <p>Rental Price: ₹3,00</p>
+        <button onclick="addToCart('Traditional MaangTikka', 300)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="antique_jhumke.jpg" alt="Antique Jhumkas">
+      <div class="product-info">
+        <h3>Antique Jhumke </h3>
+        <p>Retail Price: ₹3,000</p>
+        <p>Rental Price: ₹9,00</p>
+        <button onclick="addToCart('Antique Jhumke', 900)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="temple_jewelry.jpg" alt="Temple Necklace">
+      <div class="product-info">
+        <h3>Temple Jewelry </h3>
+        <p>Retail Price: ₹19,000</p>
+        <p>Rental Price: ₹6,500</p>
+        <button onclick="addToCart('Temple Jewelry', 6500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="zircon_braclet.jpg" alt="Zircon Bracelet">
+      <div class="product-info">
+        <h3>Zircon Bracelet </h3>
+        <p>Retail Price: ₹1,200</p>
+        <p>Rental Price: ₹3,00</p>
+        <button onclick="addToCart('Zircon Bracelet', 300)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="minimal_rings.jpg" alt="Minimal Rings">
+      <div class="product-info">
+        <h3> Minimal Rings</h3>
+        <p>Retail Price: ₹3,000</p>
+        <p>Rental Price: ₹5,00</p>
+        <button onclick="addToCart('Minimal Rings', 500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="minimal_chains.jpg" alt="Minimal Chains">
+      <div class="product-info">
+        <h3> Minimal Chains</h3>
+        <p>Retail Price: ₹4,500</p>
+        <p>Rental Price: ₹1,000</p>
+        <button onclick="addToCart('Minimal Chains', 1000)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="minimal_bracelet.jpg" alt="Minimal Bracelet">
+      <div class="product-info">
+        <<h3> Minimal Bracelet</h3>
+        <p>Retail Price: ₹3,000</p>
+        <p>Rental Price: ₹7,50</p>
+        <button onclick="addToCart('MInimal Bracelet', 750)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="jhumkahair.jpg" alt="Jhumka">
+      <div class="product-info">
+        <h3> Ear Chain Jhumka</h3>
+        <p>Retail Price: ₹3,000</p>
+        <p>Rental Price: ₹1,200</p>
+        <button onclick="addToCart('Ear Chain Jhumka', 1200)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="anklets.jpg" alt="Anklets">
+      <div class="product-info">
+        <h3>Anklets </h3>
+        <p>Retail Price: ₹3,000</p>
+        <p>Rental Price: ₹1,200</p>
+        <button onclick="addToCart('Anklets', 1200)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- <div class="product-card">
+      <img src="images/jewel10.jpg" alt="Zircon Bracelet">
+      <div class="product-info">
+        <h3></h3>
+        <p>Retail Price: ₹8,500</p>
+        <p>Rental Price: ₹3,500</p>
+        <button onclick="addToCart('', 3500)">Add to Cart</button>
+      </div>
+    </div> -->
+
+  </div>
+  <div class="cart-billing">
+    <h2>Your Cart</h2>
+    <ul id="cart-items" class="cart-items"></ul>
+
+    <div class="billing-summary">
+      <input type="text" id="username" placeholder="Your Name" required />
+      <input type="text" id="address" placeholder="Delivery Address" required />
+      <p id="totalDisplay"><strong>Total:</strong> ₹0</p>
+      <p id="discountMessage" style="color: green;"></p>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    const cart = [];
+
+    function addToCart(item, price) {
+      cart.push({ item, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      const totalDisplay = document.getElementById('totalDisplay');
+      const discountMessage = document.getElementById('discountMessage');
+      cartList.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(product => {
+        total += product.price;
+        const li = document.createElement('li');
+        li.textContent = `${product.item} - ₹${product.price}`;
+        cartList.appendChild(li);
+      });
+
+      let discount = 0;
+      if (total > 2000) {
+        discount = total * 0.10;
+        discountMessage.textContent = "🎉 10% OFF applied!";
+      } else {
+        discountMessage.textContent = "";
+      }
+
+      const finalTotal = total - discount;
+      totalDisplay.innerHTML = `<strong>Total:</strong> ₹${finalTotal} <span style="font-size:0.9em; color:#999;">(Saved ₹${discount.toFixed(0)})</span>`;
+    }
+
+    function checkout() {
+      const name = document.getElementById('username').value.trim();
+      const address = document.getElementById('address').value.trim();
+      if (!name || !address || cart.length === 0) {
+        alert("Please fill in your name, address, and add items to the cart.");
+        return;
+      }
+      alert(`✅ Thank you, ${name}! Your items will be delivered to:\n${address}`);
+      cart.length = 0;
+      updateCart();
+      document.getElementById('username').value = '';
+      document.getElementById('address').value = '';
+    }
+  </script>
+</body>
+
+</html>

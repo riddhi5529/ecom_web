@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Party Dresses - GlamRent</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+     body {
+      background-color: #fdf6ec;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #ff8a65, #f06292);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .product-info h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+    }
+    .product-info p {
+      margin: 5px 0;
+    }
+    .product-info button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart-billing {
+      padding: 40px;
+      background-color: #fff9f0;
+    }
+    .cart-billing h2 {
+      text-align: center;
+    }
+    .cart-billing input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .cart-items {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 0;
+      list-style: none;
+    }
+    .cart-items li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .billing-summary {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff3e0;
+      border-radius: 10px;
+    }
+    .billing-summary p {
+      margin: 8px 0;
+    }
+    .checkout-btn {
+      background-color: #f06292;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Party Dresses</h1>
+  </header>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="sequin_dress.jpg" alt="Sequin Gown">
+      <div class="product-info">
+        <h3>Sequin Dress</h3>
+        <p>Retail Price: ₹8,000</p>
+        <p>Rental Price: ₹3,500</p>
+        <button onclick="addToCart('Sequin Dress', 3500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="bodycon_blue.jpg" alt="Cocktail Dress">
+      <div class="product-info">
+        <h3>Bodycon Blue dress</h3>
+        <p>Retail Price: ₹7,000</p>
+        <p>Rental Price: ₹2,500</p>
+        <button onclick="addToCart('Bodycon Blue Dress', 2500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="velvet_dress.jpg" alt="Velvet Evening Dress">
+      <div class="product-info">
+        <h3>Velvet Dress</h3>
+        <p>Retail Price: ₹6,000</p>
+        <p>Rental Price: ₹1,500</p>
+        <button onclick="addToCart('Velvet Dress', 1500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="glitter_dresswhite.jpg" alt="Shimmery White Dress">
+      <div class="product-info">
+        <h3>Shimmery White Dress</h3>
+        <p>Retail Price: ₹8,000</p>
+        <p>Rental Price: ₹2,500</p>
+        <button onclick="addToCart('Shimmery White Dress', 2500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="off-Shoulder_dress.jpg" alt="Off-Shoulder Dress">
+      <div class="product-info">
+        <h3>Off- Shoulder Dress</h3>
+        <p>Retail Price: ₹7,000</p>
+        <p>Rental Price: ₹2,500</p>
+        <button onclick="addToCart('Off-Shoulder Dress', 2500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="slit_dress.jpg" alt="Slit Gown">
+      <div class="product-info">
+        <h3><Slit-dress></Slit-dress></h3>
+        <p>Retail Price: ₹6,500</p>
+        <p>Rental Price: ₹2,000</p>
+        <button onclick="addToCart('Slit-dress', 2000)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="mini_dress.jpg" alt="Designer Mini Dress">
+      <div class="product-info">
+        <h3>Mini Dress</h3>
+        <p>Retail Price: ₹2,000</p>
+        <p>Rental Price: ₹1,000</p>
+        <button onclick="addToCart('Mini Dress', 1000)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="cape_style_gown.jpg" alt="Cape Style Gown">
+      <div class="product-info">
+        <h3>Cape-Style Gown</h3>
+        <p>Retail Price: ₹8,500</p>
+        <p>Rental Price: ₹3,500</p>
+        <button onclick="addToCart('Cape-Style Gown', 3500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="dreamy_bluedress.jpg" alt="Blue Dress">
+      <div class="product-info">
+        <h3>Dreamy Blue dress</h3>
+        <p>Retail Price: ₹8,500</p>
+        <p>Rental Price: ₹3,500</p>
+        <button onclick="addToCart('Dreamy Blue Dress', 3500)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="ruffle_dress.jpg" alt="Ruffled Dress">
+      <div class="product-info">
+        <h3>Ruffled Dress</h3>
+        <p>Retail Price: ₹8,500</p>
+        <p>Rental Price: ₹2200,500</p>
+        <button onclick="addToCart('Ruffled Dress', 2200)">Add to Cart</button>
+      </div>
+    </div>
+    <!-- <div class="product-card">
+      <img src="images/party10.jpg" alt="Ruffled Dress">
+      <div class="product-info">
+        <h3></h3>
+        <p>Retail Price: ₹8,500</p>
+        <p>Rental Price: ₹3,500</p>
+        <button onclick="addToCart('', 3500)">Add to Cart</button>
+      </div>
+    </div> -->
+  </div>
+
+  <div class="cart-billing">
+    <h2>Your Cart</h2>
+    <ul id="cart-items" class="cart-items"></ul>
+
+    <div class="billing-summary">
+      <input type="text" id="username" placeholder="Your Name" required />
+      <input type="text" id="address" placeholder="Delivery Address" required />
+      <p id="totalDisplay"><strong>Total:</strong> ₹0</p>
+      <p id="discountMessage" style="color: green;"></p>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    const cart = [];
+
+    function addToCart(item, price) {
+      cart.push({ item, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      const totalDisplay = document.getElementById('totalDisplay');
+      const discountMessage = document.getElementById('discountMessage');
+      cartList.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(product => {
+        total += product.price;
+        const li = document.createElement('li');
+        li.textContent = `${product.item} - ₹${product.price}`;
+        cartList.appendChild(li);
+      });
+
+      let discount = 0;
+      if (total > 2000) {
+        discount = total * 0.10;
+        discountMessage.textContent = "🎉 10% OFF applied!";
+      } else {
+        discountMessage.textContent = "";
+      }
+
+      const finalTotal = total - discount;
+      totalDisplay.innerHTML = `<strong>Total:</strong> ₹${finalTotal} <span style="font-size:0.9em; color:#999;">(Saved ₹${discount.toFixed(0)})</span>`;
+    }
+
+    function checkout() {
+      const name = document.getElementById('username').value.trim();
+      const address = document.getElementById('address').value.trim();
+      if (!name || !address || cart.length === 0) {
+        alert("Please fill in your name, address, and add items to the cart.");
+        return;
+      }
+      alert(`✅ Thank you, ${name}! Your items will be delivered to:\n${address}`);
+      cart.length = 0;
+      updateCart();
+      document.getElementById('username').value = '';
+      document.getElementById('address').value = '';
+    }
+  </script>
+</body>
+
+</html>

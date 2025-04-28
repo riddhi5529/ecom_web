@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessories Collection - GlamRent</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   body {
+      background-color: #fdf6ec;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #ff8a65, #f06292);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .product-info h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+    }
+    .product-info p {
+      margin: 5px 0;
+    }
+    .product-info button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart-billing {
+      padding: 40px;
+      background-color: #fff9f0;
+    }
+    .cart-billing h2 {
+      text-align: center;
+    }
+    .cart-billing input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .cart-items {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 0;
+      list-style: none;
+    }
+    .cart-items li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .billing-summary {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff3e0;
+      border-radius: 10px;
+    }
+    .billing-summary p {
+      margin: 8px 0;
+    }
+    .checkout-btn {
+      background-color: #f06292;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Accessories Collection</h1>
+  </header>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="potlibag.jpg" alt="Potli Bag">
+      <div class="product-info">
+        <h3>Potli Bag </h3>
+        <p>Retail Price: ₹3,000</p>
+        <p>Rental Price: ₹1,200</p>
+        <button onclick="addToCart('Potli Bag', 1200)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="multicolour_flapover_clutch.jpg" alt="Clutch">
+      <div class="product-info">
+        <h3> Multi-color Flapover Clutch</h3>
+        <p>Retail Price: ₹13,000</p>
+        <p>Rental Price: ₹4,200</p>
+        <button onclick="addToCart('Flapover Clutch', 4200)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="whitebag.jpg" alt="White Handbag">
+      <div class="product-info">
+        <h3>White Handbag </h3>
+        <p>Retail Price: ₹12,000</p>
+        <p>Rental Price: ₹3,200</p>
+        <button onclick="addToCart('White Handbag', 3200)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="white_weddingbag.jpg" alt="Party Bag">
+      <div class="product-info">
+        <h3> Party Bag</h3>
+        <p>Retail Price: ₹8,900</p>
+        <p>Rental Price: ₹2,200</p>
+        <button onclick="addToCart('Party Bag', 2200)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="flap_saddle_bag.jpg" alt="Flap Saddle Bag">
+      <div class="product-info">
+        <h3>Flap Saddle Bag </h3>
+        <p>Retail Price: ₹9,000</p>
+        <p>Rental Price: ₹2,200</p>
+        <button onclick="addToCart('Flap Saddle Bag', 2200)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="hair_ accessories.avif" alt="Hair Accessories">
+      <div class="product-info">
+        <h3>Bridal Hair Accessories </h3>
+        <p>Retail Price: ₹4,000</p>
+        <p>Rental Price: ₹1,200</p>
+        <button onclick="addToCart('Hair Accessories', 1200)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="brownbag.jpg" alt="Brown Handbag">
+      <div class="product-info">
+        <h3>Brown Handbag </h3>
+        <p>Retail Price: ₹13,000</p>
+        <p>Rental Price: ₹4,200</p>
+        <button onclick="addToCart('Brown Handbag', 4200)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="blackbag.jpg" alt="Black Handbag">
+      <div class="product-info">
+        <h3> Black Handbag</h3>
+        <p>Retail Price: ₹14,000</p>
+        <p>Rental Price: ₹4,800</p>
+        <button onclick="addToCart('', 4800)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="waist_belt.jpg" alt="Waist Belt">
+      <div class="product-info">
+        <h3>Ethnic Waist Belt</h3>
+        <p>Retail Price: ₹14,000</p>
+        <p>Rental Price: ₹4,800</p>
+        <button onclick="addToCart('Ethnic Waist Belt', 4800)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="floral_ accessories.jpg" alt="Floral Accessories">
+      <div class="product-info">
+        <h3>Floral Accessories </h3>
+        <p>Retail Price: ₹1,000</p>
+        <p>Rental Price: ₹600</p>
+        <button onclick="addToCart('Floral Accessories', 600)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="cart-billing">
+    <h2>Your Cart</h2>
+    <ul id="cart-items" class="cart-items"></ul>
+
+    <div class="billing-summary">
+      <input type="text" id="username" placeholder="Your Name" required />
+      <input type="text" id="address" placeholder="Delivery Address" required />
+      <p id="totalDisplay"><strong>Total:</strong> ₹0</p>
+      <p id="discountMessage" style="color: green;"></p>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    const cart = [];
+
+    function addToCart(item, price) {
+      cart.push({ item, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      const totalDisplay = document.getElementById('totalDisplay');
+      const discountMessage = document.getElementById('discountMessage');
+      cartList.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(product => {
+        total += product.price;
+        const li = document.createElement('li');
+        li.textContent = `${product.item} - ₹${product.price}`;
+        cartList.appendChild(li);
+      });
+
+      let discount = 0;
+      if (total > 2000) {
+        discount = total * 0.10;
+        discountMessage.textContent = "🎉 10% OFF applied!";
+      } else {
+        discountMessage.textContent = "";
+      }
+
+      const finalTotal = total - discount;
+      totalDisplay.innerHTML = `<strong>Total:</strong> ₹${finalTotal} <span style="font-size:0.9em; color:#999;">(Saved ₹${discount.toFixed(0)})</span>`;
+    }
+
+    function checkout() {
+      const name = document.getElementById('username').value.trim();
+      const address = document.getElementById('address').value.trim();
+      if (!name || !address || cart.length === 0) {
+        alert("Please fill in your name, address, and add items to the cart.");
+        return;
+      }
+      alert(`✅ Thank you, ${name}! Your items will be delivered to:\n${address}`);
+      cart.length = 0;
+      updateCart();
+      document.getElementById('username').value = '';
+      document.getElementById('address').value = '';
+    }
+  </script>
+</body>
+
+</html>
