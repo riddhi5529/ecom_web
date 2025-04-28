@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlamRent - Customer Reviews</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #fdf6ec;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #ff8a65, #f06292);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .reviews-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .review-card {
+      background-color: #fff;
+      margin: 20px auto;
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .review-card h4 {
+      margin-top: 0;
+      color: #f06292;
+    }
+    .review-card p {
+      font-style: italic;
+    }
+    .add-review-form {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #ffe0b2;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #f06292;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e91e63;
+    }
+    footer {
+      background-color: #ff8a65;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>GlamRent Reviews</h1>
+</header>
+
+<section class="reviews-section">
+  <h2>What Our Customers Say</h2>
+
+  <div class="review-card">
+    <h4>Priya Sharma</h4>
+    <p>"Amazing service! My lehenga arrived perfectly and made my event even more special."</p>
+  </div>
+
+  <div class="review-card">
+    <h4>Rohan Mehta</h4>
+    <p>"Affordable rentals with a great collection. Highly recommend GlamRent!"</p>
+  </div>
+
+  <div class="review-card">
+    <h4>Neha Verma</h4>
+    <p>"Loved the Banarasi saree I rented. It looked brand new! Thank you GlamRent."</p>
+  </div>
+
+  <h3>Leave a Review</h3>
+  <form class="add-review-form" onsubmit="submitReview(event)">
+    <input type="text" placeholder="Your Name" required />
+    <textarea placeholder="Your Review" rows="4" required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 GlamRent. All rights reserved.</p>
+</footer>
+
+<script>
+  function submitReview(event) {
+    event.preventDefault();
+    alert('Thank you for your review! 💖');
+    // You can also later save the review using backend or localStorage
+  }
+</script>
+
+</body>
+</html>
